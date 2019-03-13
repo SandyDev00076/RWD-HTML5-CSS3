@@ -22,6 +22,19 @@ a:hover {
     color: grey;
 }
 
+.contactbutton {
+    display: none;
+}
+
+.contactbut {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    font-size: 20px;
+    text-align: center;
+    width: max-content;
+}
+
 .logo {
     grid-column: 1/2;
     font-weight: bold;
@@ -32,6 +45,10 @@ a:hover {
 
 .mylist {
     grid-column: 4/5;
+}
+
+.mylistformobile {
+    display: none;
 }
 
 .gridcontainer {
@@ -125,7 +142,8 @@ a:hover {
         grid-template-areas:
         "picture1 text1" 
         "text2 picture2" 
-        "picture3 text3"
+        "picture3 text3";
+        grid-gap: 15px;
     }
 
     .texttouse {
@@ -146,5 +164,38 @@ a:hover {
 
     .picturebox1, .picturebox2, .picturebox3 {
         background-size: cover;
+    }
+}
+
+/* MEDIA QUERY RULE FOR MOBILES */
+@media screen and (max-width: 480px) {
+    .gridcontainer {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "picture1" "text1" 
+        "picture2" "text2" 
+        "picture3" "text3";
+        grid-gap: 10px;
+    }
+
+    .mylist {
+        display: none;
+    }
+
+    .mylistformobile {
+        grid-column: 1/-1;
+        display: block;
+        margin: auto;
+        padding: 10px;
+    }
+
+    ul > li > a {
+        color: inherit;
+    }
+
+    ul > li {
+        margin: 10px;
+        font-size: 30px;
+        color: rgb(77, 77, 77);
     }
 }
