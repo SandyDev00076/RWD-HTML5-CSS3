@@ -1,0 +1,107 @@
+.navbar {
+    padding: 20px;
+    display: grid;
+    font-family: touse;
+    margin-bottom: 5px;
+}
+
+ul > li {
+    list-style-type: none;
+    display: inline;
+    cursor: pointer;
+    margin: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+ul > li > a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: grey;
+}
+
+.logo {
+    grid-column: 1/2;
+    font-weight: bold;
+    font-size: 40px;
+    color: #333;
+    cursor: default;
+}
+
+.mylist {
+    grid-column: 4/5;
+}
+
+.gridcontainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+}
+
+.picturebox1 {
+    grid-area: 'picture1';
+    background:linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.7)) border-box, url(./images/captainmarvellarge.jpg) no-repeat;
+}
+
+.picturebox2 {
+    grid-area: 'picture2';
+    background:linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.7)) border-box, url(./images/doctorstrangelarge.jpeg) no-repeat;
+}
+
+.picturebox3 {
+    grid-area: 'picture3';
+    background:linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.7)) border-box, url(./images/captainamericalarge.jpg) no-repeat;
+}
+
+.picturebox1, .picturebox2, .picturebox3 {
+    height: 350px;
+    background-size: cover;
+    box-shadow: 0 0 15px grey;
+
+    transition-property: box-shadow;
+    transition-duration: 0.25s;
+}
+
+.picturebox1:hover, .picturebox2:hover, .picturebox3:hover {
+    box-shadow: 0 0 15px rgb(41, 41, 41);
+}
+
+.textbox1 {
+    grid-area: 'text1';
+}
+
+.textbox2 {
+    grid-area: 'text2';
+}
+
+.textbox3 {
+    grid-area: 'text3';
+}
+
+.textbox1, .textbox2, .textbox3 {
+    text-align: center;
+    color: #333;
+    line-height: 1.5em;
+    padding: 20px;
+    font-family: touse;
+    cursor: default;
+
+    transition-property: color;
+    transition-duration: 0.25s;
+}
+
+.textbox1:hover, .textbox2:hover, .textbox3:hover {
+    color: black;
+}
+
+.texttouse {
+    font-size: 20px;
+}
+
+@font-face {
+    font-family: touse;
+    src: url('./fonts/touse.woff');
+}
