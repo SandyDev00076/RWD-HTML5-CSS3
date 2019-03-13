@@ -39,20 +39,22 @@ a:hover {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 10px;
+    grid-template-areas: "picture1" "text1" "picture2" "text2" "picture3" "text3";
+    align-items: center;
 }
 
 .picturebox1 {
-    grid-area: 'picture1';
+    grid-area: picture1;
     background:linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.7)) border-box, url(./images/captainmarvellarge.jpg) no-repeat;
 }
 
 .picturebox2 {
-    grid-area: 'picture2';
+    grid-area: picture2;
     background:linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.7)) border-box, url(./images/doctorstrangelarge.jpeg) no-repeat;
 }
 
 .picturebox3 {
-    grid-area: 'picture3';
+    grid-area: picture3;
     background:linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.7)) border-box, url(./images/captainamericalarge.jpg) no-repeat;
 }
 
@@ -70,15 +72,15 @@ a:hover {
 }
 
 .textbox1 {
-    grid-area: 'text1';
+    grid-area: text1;
 }
 
 .textbox2 {
-    grid-area: 'text2';
+    grid-area: text2;
 }
 
 .textbox3 {
-    grid-area: 'text3';
+    grid-area: text3;
 }
 
 .textbox1, .textbox2, .textbox3 {
@@ -104,4 +106,45 @@ a:hover {
 @font-face {
     font-family: touse;
     src: url('./fonts/touse.woff');
+}
+
+/* MEDIA QUERY RULE FOR TABS */
+@media screen and (max-width: 1024px) {
+    .logo {
+        text-align: center;
+        grid-column: 1/-1;
+    }
+
+    .mylist {
+        text-align: center;
+        grid-column: 1/-1;
+    }
+
+    .gridcontainer {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+        "picture1 text1" 
+        "text2 picture2" 
+        "picture3 text3"
+    }
+
+    .texttouse {
+        font-size: 15px;
+    }
+
+    .picturebox1 {
+        background: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.7)) border-box, url(./images/captainmarvelsmall.jpg) no-repeat;
+    }
+
+    .picturebox2 {
+        background:linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.7)) border-box, url(./images/doctorstrangesmall.jpg) no-repeat;
+    }
+
+    .picturebox3 {
+        background:linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.7)) border-box, url(./images/captainamericasmall.jpg) no-repeat;
+    }
+
+    .picturebox1, .picturebox2, .picturebox3 {
+        background-size: cover;
+    }
 }
